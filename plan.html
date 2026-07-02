@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>出産・子育て おかね完全アクションプラン(吹田市版)</title>
+<style>
+  :root{
+    --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --ink3:#8a8880;
+    --blue:#2a78d6; --blue-d:#1c5cab; --blue-l:#cde2fb; --blue-ll:#eaf3fd;
+    --aqua:#1baf7a; --yellow:#eda100; --violet:#4a3aa7; --red:#e34948;
+    --line:#e4e2dc;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--surface); color:var(--ink);
+    font-family:"IPAPGothic","IPAGothic",sans-serif; font-size:8.6pt; line-height:1.5;}
+  @page{size:A4; margin:0;}
+  .page{width:210mm; height:296mm; overflow:hidden; padding:11mm 12mm 10mm; page-break-after:always; position:relative;}
+  .page:last-child{page-break-after:auto;}
+
+  /* ---------- typography ---------- */
+  h1{font-size:23pt; line-height:1.35; letter-spacing:.02em;}
+  h2{font-size:14pt; margin-bottom:3mm; padding-bottom:1.6mm; border-bottom:2.5px solid var(--blue); letter-spacing:.03em;}
+  h2 .step{display:inline-block; background:var(--blue); color:#fff; font-size:9pt; padding:1px 8px; border-radius:3px; vertical-align:3px; margin-right:6px;}
+  h3{font-size:10pt; margin:3mm 0 1.2mm;}
+  p{margin-bottom:2mm;}
+  .small{font-size:8pt; color:var(--ink2);}
+  .tiny{font-size:7pt; color:var(--ink3);}
+  a{color:var(--blue-d); text-decoration:none; word-break:break-all;}
+  .url{font-size:6.8pt; color:var(--blue-d); word-break:break-all;}
+
+  /* ---------- cover ---------- */
+  .cover-band{background:linear-gradient(135deg,#0d366b,#2a78d6); color:#fff; border-radius:6mm; padding:11mm 10mm; margin-bottom:7mm;}
+  .cover-band .sub{font-size:10.5pt; opacity:.92; margin-top:3mm;}
+  .cover-meta{display:flex; gap:4mm; margin-top:5mm; flex-wrap:wrap;}
+  .cover-meta span{background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.4); border-radius:99px; padding:1mm 5mm; font-size:9.5pt;}
+  .tiles{display:flex; gap:4mm; margin:6mm 0;}
+  .tile{flex:1; border:1px solid var(--line); border-radius:3mm; padding:4.5mm 4mm 4mm; background:#fff;}
+  .tile .lab{font-size:8pt; color:var(--ink2); margin-bottom:1mm;}
+  .tile .val{font-size:17pt; color:var(--blue-d); line-height:1.2;}
+  .tile .val small{font-size:9pt; color:var(--ink2);}
+  .tile .note{font-size:7pt; color:var(--ink3); margin-top:1mm;}
+  .toc{border:1px solid var(--line); border-radius:3mm; background:#fff; padding:5mm 6mm; margin-top:5mm;}
+  .toc ol{margin-left:6mm;}
+  .toc li{margin:1.2mm 0;}
+
+  /* ---------- checklist tables ---------- */
+  table{width:100%; border-collapse:collapse; margin:1.5mm 0 3mm;}
+  th{background:var(--blue-ll); font-size:8pt; text-align:left; padding:1.2mm 2mm; border:1px solid var(--line); color:var(--ink);}
+  td{padding:1.3mm 2mm; border:1px solid var(--line); vertical-align:top; font-size:7.9pt; background:#fff; line-height:1.45;}
+  td .t{font-size:8.6pt;}
+  .money{color:var(--blue-d); white-space:nowrap; font-size:8.6pt;}
+  .chk{width:5mm; text-align:center; font-size:11pt; color:var(--ink3);}
+  .deadline{color:var(--red); font-size:8pt;}
+  .who{display:inline-block; font-size:7pt; border:1px solid var(--line); border-radius:99px; padding:0 2.2mm; color:var(--ink2); margin-left:1.5mm; vertical-align:1px;}
+
+  /* ---------- boxes ---------- */
+  .point{border-left:4px solid var(--yellow); background:#fdf6e7; padding:2mm 3.5mm; border-radius:0 2mm 2mm 0; margin:2.2mm 0; font-size:8.2pt;}
+  .point b{color:#8a5d00;}
+  .alert{border-left:4px solid var(--red); background:#fdeeee; padding:2mm 3.5mm; border-radius:0 2mm 2mm 0; margin:2.2mm 0; font-size:8.2pt;}
+  .alert b{color:#a32b2a;}
+  .tip{border-left:4px solid var(--aqua); background:#e9f7f1; padding:2mm 3.5mm; border-radius:0 2mm 2mm 0; margin:2.2mm 0; font-size:8.2pt;}
+  .tip b{color:#0d6647;}
+
+  .pgno{position:absolute; bottom:6mm; right:14mm; font-size:7.5pt; color:var(--ink3);}
+  .foot{position:absolute; bottom:6mm; left:14mm; font-size:7pt; color:var(--ink3);}
+
+  figure{margin:3mm 0 4mm;}
+  figcaption{font-size:7.5pt; color:var(--ink2); margin-top:1mm;}
+  .legend{display:flex; gap:5mm; font-size:7.8pt; color:var(--ink2); margin:1mm 0 0;}
+  .legend i{display:inline-block; width:3.2mm; height:3.2mm; border-radius:1mm; margin-right:1.4mm; vertical-align:-0.4mm;}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ PAGE 1 : COVER -->
+<div class="page">
+  <div class="cover-band">
+    <div style="font-size:10pt; opacity:.85; margin-bottom:2mm;">大阪府吹田市版 / 2026年7月2日作成</div>
+    <h1>出産・子育て<br>「もらえる・戻ってくる」完全アクションプラン</h1>
+    <div class="sub">給付金・手当・税金対策を、申請先URL付きで時系列に整理。<br>このPDFだけで全手続きが完了できることを目指した保存版です。</div>
+    <div class="cover-meta">
+      <span>出産予定日:2026年8月12日</span>
+      <span>お住まい:大阪府吹田市</span>
+      <span>制度情報:2026年7月時点</span>
+    </div>
+  </div>
+
+  <div class="tiles">
+    <div class="tile">
+      <div class="lab">出産前後1年で受け取れるお金の目安</div>
+      <div class="val">約350<small>万円</small></div>
+      <div class="note">共働き(各月収30万円)・妻1年育休・夫28日育休のモデルケース(P.7参照)</div>
+    </div>
+    <div class="tile">
+      <div class="lab">最重要デッドライン</div>
+      <div class="val">出生後<span style="color:var(--red)">15日</span><small>以内</small></div>
+      <div class="note">児童手当の申請。遅れた月の分は二度と受け取れません</div>
+    </div>
+    <div class="tile">
+      <div class="lab">児童手当の生涯総額(第1子)</div>
+      <div class="val">約234<small>万円</small></div>
+      <div class="note">0歳〜18歳年度末まで。所得制限なし(2024年10月拡充後)</div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <h3 style="margin-top:0;">もくじ</h3>
+    <ol>
+      <li><b>全体タイムライン</b> — 今日から確定申告までの流れを1枚で(P.2)</li>
+      <li><b>STEP1 出産前(今すぐ〜8月上旬)</b> — 産前休業は今日から取得可能です(P.3)</li>
+      <li><b>STEP2 出産直後(生後15日以内が勝負)</b> — 役所・会社への届出ラッシュ(P.4)</li>
+      <li><b>STEP3 産後2か月〜1歳</b> — 給付金の受取りと保育園申込(P.5)</li>
+      <li><b>STEP4 税金で取り戻す</b> — 年末調整・確定申告・ふるさと納税の注意(P.6)</li>
+      <li><b>もらえるお金の全体像</b> — モデルケースの金額試算(P.7)</li>
+      <li><b>申請先・窓口・URL完全リスト</b>(P.8)</li>
+      <li><b>今後の制度変更と注意事項</b>(P.9)</li>
+    </ol>
+  </div>
+
+  <div class="alert" style="margin-top:5mm;"><b>本資料の使い方:</b>各ページのチェック欄(□)を潰していけば、取りこぼしなく全制度を受給できます。金額・条件は2026年7月時点の公開情報に基づきます。最終確認は各項目に記載の公式URLで行ってください。</div>
+  <div class="pgno">1</div>
+</div>
+
+<!-- ============================================================ PAGE 2 : TIMELINE -->
+<div class="page">
+  <h2>全体タイムライン(2026年7月〜2027年3月)</h2>
+  <p class="small">出産予定日8月12日から逆算・順算した、お金に関わる全イベントです。色は時期の区分を表します。</p>
+
+  <figure>
+  <svg width="182mm" height="150mm" viewBox="0 0 728 600" font-family="IPAPGothic" font-size="13">
+    <!-- vertical spine -->
+    <line x1="150" y1="20" x2="150" y2="588" stroke="#e4e2dc" stroke-width="2"/>
+    <!-- phase bands -->
+    <!-- phase 1 : now - birth -->
+    <rect x="144" y="20" width="12" height="130" rx="6" fill="#2a78d6"/>
+    <!-- phase 2 : birth - +15d -->
+    <rect x="144" y="158" width="12" height="120" rx="6" fill="#1baf7a"/>
+    <!-- phase 3 : 2mo-1y -->
+    <rect x="144" y="286" width="12" height="150" rx="6" fill="#eda100"/>
+    <!-- phase 4 : tax -->
+    <rect x="144" y="444" width="12" height="144" rx="6" fill="#4a3aa7"/>
+
+    <!-- phase labels left -->
+    <text x="130" y="80" text-anchor="end" fill="#2a78d6" font-size="15" font-weight="bold">STEP1</text>
+    <text x="130" y="98" text-anchor="end" fill="#52514e" font-size="11">出産前</text>
+    <text x="130" y="212" text-anchor="end" fill="#1baf7a" font-size="15" font-weight="bold">STEP2</text>
+    <text x="130" y="230" text-anchor="end" fill="#52514e" font-size="11">出産直後</text>
+    <text x="130" y="355" text-anchor="end" fill="#eda100" font-size="15" font-weight="bold">STEP3</text>
+    <text x="130" y="373" text-anchor="end" fill="#52514e" font-size="11">産後〜1歳</text>
+    <text x="130" y="510" text-anchor="end" fill="#4a3aa7" font-size="15" font-weight="bold">STEP4</text>
+    <text x="130" y="528" text-anchor="end" fill="#52514e" font-size="11">税金対策</text>
+
+    <!-- events -->
+    <g>
+      <circle cx="150" cy="34" r="5" fill="#fff" stroke="#2a78d6" stroke-width="3"/>
+      <text x="172" y="30" font-weight="bold">7/2(今日) 産前休業の取得開始が可能に(予定日42日前)</text>
+      <text x="172" y="46" fill="#52514e" font-size="11">国保の人は年金・国保料の産前産後免除を今すぐ届出/妊婦支援給付金①5万円の申請確認</text>
+
+      <circle cx="150" cy="72" r="5" fill="#fff" stroke="#2a78d6" stroke-width="3"/>
+      <text x="172" y="68" font-weight="bold">7月中 産院と「直接支払制度」の合意書/マイナ保険証の確認</text>
+      <text x="172" y="84" fill="#52514e" font-size="11">夫の育休スケジュール確定・会社へ申出(開始1か月前まで)/保育園の情報収集開始</text>
+
+      <circle cx="150" cy="110" r="5" fill="#fff" stroke="#2a78d6" stroke-width="3"/>
+      <text x="172" y="106" font-weight="bold">8月上旬 入院準備と申請書類の事前記入</text>
+      <text x="172" y="122" fill="#52514e" font-size="11">出産手当金・育休給付の申請書を会社から入手し記入できる所は済ませる</text>
+
+      <circle cx="150" cy="164" r="7" fill="#e34948"/>
+      <text x="172" y="160" font-weight="bold" fill="#a32b2a" font-size="15">8/12 出産予定日 (出産育児一時金50万円は産院へ直接支払)</text>
+
+      <circle cx="150" cy="200" r="5" fill="#fff" stroke="#1baf7a" stroke-width="3"/>
+      <text x="172" y="196" font-weight="bold">〜8/26頃 出生届(14日以内)・マイナンバー取得</text>
+      <text x="172" y="212" fill="#52514e" font-size="11">吹田市役所 市民課。同日に児童手当・こども医療の手続きをまとめて行うのが効率的</text>
+
+      <circle cx="150" cy="238" r="7" fill="#e34948"/>
+      <text x="172" y="234" font-weight="bold" fill="#a32b2a">〜8/27 児童手当の申請(出生翌日から15日以内・遡及不可)</text>
+      <text x="172" y="254" fill="#52514e" font-size="11">子の健康保険加入→こども医療費助成の申請/妊婦支援給付金②5万円</text>
+
+      <circle cx="150" cy="292" r="5" fill="#fff" stroke="#eda100" stroke-width="3"/>
+      <text x="172" y="288" font-weight="bold">10/7 産後休業(56日)終了 → 10/8 育児休業開始</text>
+      <text x="172" y="304" fill="#52514e" font-size="11">出産手当金(約65万円)をまとめて申請/育休給付金の初回申請(会社経由)</text>
+
+      <circle cx="150" cy="330" r="7" fill="#e34948"/>
+      <text x="172" y="326" font-weight="bold" fill="#a32b2a">10月頃 保育園の2027年4月入園 一斉申込(吹田市・締切厳守)</text>
+      <text x="172" y="346" fill="#52514e" font-size="11">例年10月上旬〜11月に受付。夏のうちに見学を済ませておく</text>
+
+      <circle cx="150" cy="376" r="5" fill="#fff" stroke="#eda100" stroke-width="3"/>
+      <text x="172" y="372" font-weight="bold">10月〜 児童手当 初回振込(偶数月払い)/産後ケア・家事支援の活用</text>
+      <text x="172" y="392" fill="#52514e" font-size="11">2027年2月〜(生後6か月) こども誰でも通園制度(月10時間)が利用可能に</text>
+
+      <circle cx="150" cy="420" r="5" fill="#fff" stroke="#eda100" stroke-width="3"/>
+      <text x="172" y="416" font-weight="bold">育休給付金 2か月ごとに振込(月収30万円なら6か月間 月約20万円)</text>
+
+      <circle cx="150" cy="452" r="5" fill="#fff" stroke="#4a3aa7" stroke-width="3"/>
+      <text x="172" y="448" font-weight="bold">11〜12月 夫の年末調整で「配偶者(特別)控除」を申告</text>
+      <text x="172" y="468" fill="#52514e" font-size="11">出産手当金・育休給付金は非課税=妻の年収に含めない。該当すれば数万円の節税</text>
+
+      <circle cx="150" cy="496" r="5" fill="#fff" stroke="#4a3aa7" stroke-width="3"/>
+      <text x="172" y="492" font-weight="bold">12月末まで ふるさと納税の上限額を再計算(収入減の年は要注意)</text>
+
+      <circle cx="150" cy="536" r="7" fill="#e34948"/>
+      <text x="172" y="532" font-weight="bold" fill="#a32b2a">2027年2/16〜3/15 確定申告で医療費控除(妊婦健診+分娩費)</text>
+      <text x="172" y="552" fill="#52514e" font-size="11">家族分を合算し、所得の高い方が申告。5年間は遡って申告可能</text>
+
+      <circle cx="150" cy="576" r="5" fill="#fff" stroke="#4a3aa7" stroke-width="3"/>
+      <text x="172" y="572" font-weight="bold">2027年8月 育休1年満了(保育園に入れない場合は最長2歳まで延長可)</text>
+    </g>
+  </svg>
+  <figcaption>■青=出産前 ■緑=出産直後2週間 ■黄=産後〜1歳 ■紫=税金対策。赤丸は締切が固定された最重要イベント。</figcaption>
+  </figure>
+  <div class="pgno">2</div>
+</div>
+
+<!-- ============================================================ PAGE 3 : STEP1 -->
+<div class="page">
+  <h2><span class="step">STEP 1</span>出産前 — 今すぐ〜8月上旬にやること</h2>
+
+  <div class="point"><b>今日がまさに開始日:</b>出産予定日8/12の42日前=<b>7/2から産前休業を取得可能</b>です(会社員の場合、請求すれば会社は拒めません)。出産手当金の支給対象期間もここから始まります。</div>
+
+  <table>
+    <tr><th class="chk">✓</th><th style="width:38%">やること</th><th style="width:14%">もらえる額等</th><th>ポイント・申請先</th></tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>妊婦支援給付金①の申請確認</b></span><span class="who">妻</span></td>
+      <td class="money">5万円</td>
+      <td>妊娠届出時の助産師面談後、吹田市電子申込システムから申請。未申請なら今すぐ。出産後に②の5万円(胎児数×5万円)も受給。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1037662.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>妊産婦サポートクーポン(はぐくみクーポン)</b></span><span class="who">妻</span></td>
+      <td class="money">クーポン給付</td>
+      <td>吹田市独自。家事代行・助産師ケア・市内店舗のベビー用品・タクシー等に使える電子クーポン。妊娠中から使えるので出産前に登録を。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1022747.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>妊婦健診の公費受診券を使い切る</b></span><span class="who">妻</span></td>
+      <td class="money">約12万円相当</td>
+      <td>14回分の補助券。里帰り等で大阪府外受診した分は後日償還払いの申請を忘れずに。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1018207/1015651.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>出産育児一時金「直接支払制度」の合意書</b></span><span class="who">妻</span></td>
+      <td class="money">50万円</td>
+      <td>産院の窓口で合意書に署名するだけ。50万円が健保から産院へ直接支払われ、窓口負担は差額のみに。<br><span class="url">https://www.kyoukaikenpo.or.jp/benefit/childbirth/002/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>マイナ保険証の利用登録</b></span><span class="who">夫婦</span></td>
+      <td class="money">立替不要に</td>
+      <td>帝王切開等になった場合、マイナ保険証で受診すれば限度額適用認定証なしで高額療養費の限度額までの支払いで済む。入院前に登録確認を。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>出産手当金・育休給付の書類を会社から入手</b></span><span class="who">夫婦</span></td>
+      <td class="money">—</td>
+      <td>「出産手当金支給申請書」(健保)と育児休業給付の手続き方法を人事に確認。産院の証明欄があるため入院時に持参する。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>夫の育休を設計し会社へ申出</b></span><span class="who">夫</span></td>
+      <td class="money">実質手取り10割</td>
+      <td>産後8週間以内に夫婦とも14日以上育休を取ると「出生後休業支援給付金」で最大28日間、給付率80%(手取り実質10割)。開始予定日の原則1か月前(産後パパ育休は2週間前)までに会社へ。<br><span class="url">https://www.mhlw.go.jp/content/11600000/001461102.pdf</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>【国保・自営業の場合】年金・国保料の産前産後免除</b></span><span class="who">妻</span></td>
+      <td class="money">約7万円免除</td>
+      <td>国民年金保険料と国保料(所得割・均等割)が出産予定月の前月から4か月分免除。<b>予定日の6か月前から届出可能=今すぐ出せます</b>。免除でも年金は納付済扱い。<br><span class="url">https://www.nenkin.go.jp/service/kokunen/menjo/20180810.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>医療費の領収書保管を家族全員分開始</b></span><span class="who">夫婦</span></td>
+      <td class="money">還付数万円</td>
+      <td>妊婦健診の自己負担・通院交通費・分娩入院費はすべて医療費控除の対象。封筒を1つ用意して家族全員分を放り込むだけでOK(P.6参照)。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>保育園リサーチ開始(激戦区対策)</b></span><span class="who">夫婦</span></td>
+      <td class="money">—</td>
+      <td>2027年4月入園(0歳児クラス)の一斉申込は<b>例年10月頃</b>。見学は夏のうちに。吹田市の入園案内と申込方法を確認。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018247/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>勤務先・健保組合の独自給付を確認</b></span><span class="who">夫婦</span></td>
+      <td class="money">数万〜数十万円</td>
+      <td>健保組合によっては出産育児一時金への「付加給付」(+数万円)、会社によっては出産祝い金あり。就業規則と健保のサイトを一度確認。</td>
+    </tr>
+  </table>
+
+  <div class="tip"><b>民間保険のチェック:</b>加入中の医療保険は帝王切開・吸引分娩・切迫早産入院などで給付対象になることが多いです(約5人に1人が帝王切開)。証券の「手術給付」「入院給付」欄を出産前に確認し、該当したら忘れず請求を。</div>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">3</div>
+</div>
+
+<!-- ============================================================ PAGE 4 : STEP2 -->
+<div class="page">
+  <h2><span class="step">STEP 2</span>出産直後 — 生後15日以内が勝負</h2>
+
+  <div class="alert"><b>最重要:</b>児童手当は<b>出生日の翌日から15日以内</b>(8/12出産なら<b>8/27まで</b>)に申請。1日でも遅れると遅れた月の手当(月1.5万円)は受け取れず、遡及もされません。出生届と同日に市役所でまとめて済ませましょう。里帰り出産でも申請先は<b>住民票のある吹田市</b>です(出生届は里帰り先でも提出可)。</div>
+
+  <table>
+    <tr><th class="chk">✓</th><th style="width:36%">やること</th><th style="width:15%">期限/金額</th><th>ポイント・申請先</th></tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>① 出生届</b></span><span class="who">夫</span></td>
+      <td><span class="deadline">14日以内</span></td>
+      <td>吹田市役所 市民課(または里帰り先の市区町村)。出生証明書(産院発行)・母子健康手帳を持参。届出と同時に住民票に記載され、マイナンバーが付番される。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>② 児童手当の認定請求</b></span><span class="who">所得が高い方</span></td>
+      <td><span class="deadline">15日以内</span><br><span class="money">月1.5万円</span></td>
+      <td>吹田市 児童手当担当へ。請求者(生計中心者=所得の高い方)の口座・健康保険情報が必要。所得制限なし。3歳未満月1.5万円→3歳以降月1万円、18歳年度末まで総額約234万円。偶数月に2か月分振込。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018219/1018222/</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>③ 子どもの健康保険加入</b></span><span class="who">扶養に入れる方</span></td>
+      <td><span class="deadline">5日以内目安</span></td>
+      <td>会社員→勤務先へ扶養追加を申請(原則、所得の高い方の扶養)。国保→市役所で手続き。<b>④の前提になるため最優先</b>。資格確認書/マイナ保険証の発行を急ぐ。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>④ こども医療費助成の申請</b></span><span class="who">親</span></td>
+      <td><span class="money">18歳まで助成</span></td>
+      <td>吹田市は<b>18歳年度末まで・所得制限なし</b>。自己負担は1医療機関につき1日500円(月2日まで)、月上限あり・院外薬局は無料。医療証が届いたら小児科受診時に必ず提示。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018219/1018222/1005604.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>⑤ 妊婦支援給付金②の申請</b></span><span class="who">妻</span></td>
+      <td><span class="money">5万円</span></td>
+      <td>出産後の新生児訪問(こんにちは赤ちゃん訪問)時に案内あり。吹田市電子申込システムから口座を登録して申請。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1037662.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>⑥ 子のマイナンバーカード申請</b></span><span class="who">親</span></td>
+      <td>—</td>
+      <td>出生届提出後に送られる交付申請書またはスマホから申請。医療費助成・保育園申込・給付金のオンライン申請で使う場面が増えるため早めに。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>⑦ 出産育児一時金の差額請求</b></span><span class="who">妻</span></td>
+      <td><span class="money">差額分</span></td>
+      <td>分娩費用が50万円未満だった場合、差額を健保に請求できる(直接支払制度利用時)。協会けんぽは「差額申請書」を提出。<br><span class="url">https://www.kyoukaikenpo.or.jp/benefit/childbirth/002/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>⑧ 【帝王切開等の場合】高額療養費</b></span><span class="who">妻</span></td>
+      <td><span class="money">限度額超過分</span></td>
+      <td>保険適用の手術・入院は高額療養費の対象。マイナ保険証で受診していれば窓口支払いが自動的に限度額まで。事後でも2年以内なら請求可。民間医療保険の給付金請求もセットで。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>⑨ 出産費用の領収書・明細書を保管</b></span><span class="who">夫婦</span></td>
+      <td>—</td>
+      <td>分娩・入院費、入院時のタクシー代(陣痛時)も医療費控除の対象。産院の領収書と明細書は確定申告まで厳重保管。</td>
+    </tr>
+  </table>
+
+  <h3>市役所1回で済ませる持ち物リスト(出生届と同時に②〜④)</h3>
+  <p class="small">□出生証明書付き出生届 □母子健康手帳 □請求者の本人確認書類(マイナンバーカード) □請求者名義の通帳・キャッシュカード □請求者の健康保険情報 □印鑑(念のため)</p>
+
+  <div class="tip"><b>夫の出生後休業支援給付(手取り10割)の起点:</b>夫の「産後パパ育休」は出生日〜8週間(10/7まで)の間に取得。この期間内に夫婦それぞれ14日以上の育休で、両者に28日間まで+13%上乗せが適用されます(妻は産休明けの育休で自動的に要件を満たします)。</div>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">4</div>
+</div>
+
+<!-- ============================================================ PAGE 5 : STEP3 -->
+<div class="page">
+  <h2><span class="step">STEP 3</span>産後2か月〜1歳 — 給付金の受取りと保育園</h2>
+
+  <figure>
+  <svg width="182mm" height="34mm" viewBox="0 0 728 136" font-family="IPAPGothic" font-size="12">
+    <!-- maternity money timeline -->
+    <text x="0" y="14" font-size="13" font-weight="bold" fill="#0b0b0b">お金の切れ目なしイメージ(妻・会社員の場合)</text>
+    <!-- bars -->
+    <rect x="30" y="30" width="120" height="26" rx="4" fill="#2a78d6"/>
+    <rect x="152" y="30" width="160" height="26" rx="4" fill="#1c5cab"/>
+    <rect x="314" y="30" width="230" height="26" rx="4" fill="#2a78d6"/>
+    <rect x="546" y="30" width="152" height="26" rx="4" fill="#86b6ef"/>
+    <text x="90" y="47" text-anchor="middle" fill="#fff" font-size="11.5">産前休業 7/2〜</text>
+    <text x="232" y="47" text-anchor="middle" fill="#fff" font-size="11.5">産後休業 〜10/7</text>
+    <text x="429" y="47" text-anchor="middle" fill="#fff" font-size="11.5">育児休業(〜180日) 10/8〜</text>
+    <text x="622" y="47" text-anchor="middle" fill="#0b0b0b" font-size="11.5">育休181日目〜1歳</text>
+    <!-- money labels -->
+    <text x="171" y="78" text-anchor="middle" fill="#1c5cab" font-size="12" font-weight="bold">出産手当金:給与の2/3</text>
+    <text x="171" y="94" text-anchor="middle" fill="#52514e" font-size="10.5">(98日分・産後にまとめて申請)</text>
+    <text x="429" y="78" text-anchor="middle" fill="#1c5cab" font-size="12" font-weight="bold">育休給付金:67%(手取り約8割)</text>
+    <text x="429" y="94" text-anchor="middle" fill="#52514e" font-size="10.5">社会保険料免除+非課税のため</text>
+    <text x="622" y="78" text-anchor="middle" fill="#1c5cab" font-size="12" font-weight="bold">50%</text>
+    <text x="622" y="94" text-anchor="middle" fill="#52514e" font-size="10.5">保育園に入れなければ最長2歳まで</text>
+    <line x1="313" y1="26" x2="313" y2="60" stroke="#e34948" stroke-width="2"/>
+    <text x="313" y="120" text-anchor="middle" fill="#a32b2a" font-size="11">▲8/12出産</text>
+  </svg>
+  </figure>
+
+  <table>
+    <tr><th class="chk">✓</th><th style="width:36%">やること</th><th style="width:15%">時期/金額</th><th>ポイント・申請先</th></tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>出産手当金の申請</b></span><span class="who">妻</span></td>
+      <td>10月上旬〜<br><span class="money">約65万円</span></td>
+      <td>産後56日経過後(10/8以降)にまとめて申請が効率的。申請書に産院の証明+会社の証明が必要。標準報酬月額30万円なら日額6,667円×98日≒65万円。申請から入金まで1〜2か月。<br><span class="url">https://www.kyoukaikenpo.or.jp/benefit/childbirth/001/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>育児休業給付金(初回)</b></span><span class="who">夫婦</span></td>
+      <td>2か月ごと<br><span class="money">月約20万円〜</span></td>
+      <td>原則会社がハローワークに申請。初回は育休開始から約2〜3か月後に入金される点に注意(家計の資金繰り)。180日まで67%、以降50%。<br><span class="url">https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>社会保険料の免除確認</b></span><span class="who">夫婦</span></td>
+      <td><span class="money">月数万円×期間</span></td>
+      <td>産休・育休中は健康保険・厚生年金保険料が本人・会社とも免除(将来の年金額は減らない)。会社が手続きするが、給与明細で控除されていないか必ず確認。賞与月に月末をまたぐ育休(14日以上)があれば賞与分も免除。</td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>産後ケア事業(吹田市)</b></span><span class="who">妻</span></td>
+      <td>産後1年以内</td>
+      <td>宿泊型・デイサービス型・訪問型を市の補助価格で利用可能。心身の回復・授乳指導・育児相談。予約が埋まりやすいので早めに登録を。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018210/1018211/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>産後家事支援事業(吹田市)</b></span><span class="who">妻</span></td>
+      <td>—</td>
+      <td>ヘルパーによる家事支援を補助価格で利用可。はぐくみクーポンの家事代行と併用して負担を最小化。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018210/1018212/index.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>1か月児健診・新生児聴覚検査の助成</b></span><span class="who">親</span></td>
+      <td><span class="money">健診費補助</span></td>
+      <td>受診券で公費補助。大阪府外(里帰り先等)で受けた場合は償還払い申請を忘れずに。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018215/1015477.html</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>保育園 2027年4月入園の一斉申込</b></span><span class="who">夫婦</span></td>
+      <td><span class="deadline">2026年10月頃</span></td>
+      <td><b>締切を逃すと4月入園はほぼ不可能に。</b>0歳児4月入園が最も入りやすい。申込書類(就労証明書等)は会社に依頼する時間も見込んで9月中に準備。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018247/1022101/</span></td>
+    </tr>
+    <tr>
+      <td class="chk">□</td>
+      <td><span class="t"><b>こども誰でも通園制度(2026年度開始)</b></span><span class="who">親</span></td>
+      <td>生後6か月〜<br>月10時間</td>
+      <td>親の就労を問わず月10時間まで保育施設に預けられる新制度。2027年2月(生後6か月)から利用可。国の「つうえんポータル」で事前面談を予約。<br><span class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018245/1041895/index.html</span></td>
+    </tr>
+  </table>
+
+  <div class="tip"><b>児童手当は「使わず育てる」選択肢:</b>児童手当(第1子総額約234万円)をそのまま子ども名義の学資に回し、親のNISA口座で全世界株式等に積立てた場合、年利3〜5%なら18年で350〜450万円規模になる計算。大学費用の備えとして最有力の選択肢です(投資はリスクを理解の上で)。</div>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">5</div>
+</div>
+
+<!-- ============================================================ PAGE 6 : STEP4 TAX -->
+<div class="page">
+  <h2><span class="step">STEP 4</span>税金で取り戻す — 年末調整と確定申告</h2>
+
+  <div class="point"><b>大原則:</b>出産手当金・育児休業給付金・出生後休業支援給付金・妊婦支援給付金・児童手当は<b>すべて非課税</b>。税金の計算上「収入」に含めません。このため産休・育休の年は妻の課税所得が大きく下がり、<b>夫側の控除で取り戻すチャンス</b>が生まれます。</div>
+
+  <h3>① 夫の年末調整:配偶者(特別)控除 <span class="small">(2026年11〜12月)</span></h3>
+  <p>妻が7月から産休の場合、2026年の妻の給与収入は1〜6月分+賞与のみ。<b>給与収入123万円以下なら配偶者控除(38万円)、123万〜201.6万円未満なら配偶者特別控除(最大38万円)</b>の対象になり得ます(夫の合計所得900万円以下の場合)。夫の年末調整の「基礎控除申告書兼配偶者控除等申告書」に妻の見積所得を記入するだけ。<b>所得税+住民税で約7〜10万円の節税</b>になるケースが典型です。</p>
+  <p class="url">国税庁 配偶者特別控除: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1195.htm</p>
+
+  <h3>② 確定申告:医療費控除 <span class="small">(2027年2/16〜3/15、e-Taxなら1月から)</span></h3>
+  <table>
+    <tr><th style="width:48%">対象になるもの◯</th><th>対象にならないもの✕</th></tr>
+    <tr><td>妊婦健診・検査の自己負担分/分娩費・入院費/入院中の食事代(病院提供)/通院の公共交通機関の交通費/陣痛時のタクシー代/産後1か月健診/母乳外来(治療目的)/不妊治療費/家族全員の医療費・薬代(合算可)</td>
+    <td>里帰りの帰省交通費/自家用車のガソリン代・駐車場代/入院時の身の回り品/個室の差額ベッド代(本人希望)/予防接種/妊娠検査薬</td></tr>
+  </table>
+  <p><b>計算式:</b>(医療費合計 − 出産育児一時金50万円等の補填 − 10万円) × 税率が還付の目安。<b>出産手当金・育休給付金は差し引き不要</b>(補填にあたりません)。共働きなら<b>所得の高い方が家族全員分を合算して申告</b>するのが最も得。マイナポータル連携で医療費通知を自動取得できますが、自費の分娩費・交通費は手入力が必要。5年間遡れるので焦らなくてOK。</p>
+  <p class="url">国税庁 医療費控除: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm / 出産費用の具体例: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1124.htm</p>
+
+  <h3>③ ふるさと納税の注意 <span class="small">(2026年12月末まで)</span></h3>
+  <p><b>妻:</b>2026年は収入減+非課税給付のため控除上限が大幅に下がります。1〜6月の給与だけで上限を再計算し、超えないように。<b>2027年(丸1年育休)は住民税がほぼかからずふるさと納税のメリットは実質ゼロ</b>なので行わないのが正解。<b>夫:</b>収入は変わらないため通常どおりでOK。ただし医療費控除や配偶者控除を追加すると上限がわずかに下がる点だけ注意(シミュレーターで「控除あり」で再計算)。</p>
+
+  <h3>④ 住民税の資金繰り <span class="small">(見落としがちな出費)</span></h3>
+  <p>住民税は<b>前年の所得</b>に課税されるため、育休で収入がなくても2026年度分(2025年所得ベース)・2027年度分(2026年1〜7月所得ベース)の請求は来ます。産休前の最後の給与で一括徴収するか、普通徴収(自分で納付)に切り替えるかを会社と相談し、<b>納付資金を残しておく</b>こと。納付が苦しい場合は吹田市に減免・猶予の相談窓口があります。</p>
+
+  <h3>⑤ その他の取り戻しポイント</h3>
+  <table>
+    <tr><th style="width:30%">項目</th><th>内容</th></tr>
+    <tr><td><b>高額療養費(世帯合算)</b></td><td>同一月の家族の保険診療自己負担は世帯合算で限度額超過分が戻る。帝王切開の月は家族の医療費も要チェック。</td></tr>
+    <tr><td><b>妻の源泉徴収税の還付</b></td><td>妻が年の途中から産休で年末調整を受けた場合も、医療費控除等があれば確定申告でさらに還付。年末調整を受けていなければほぼ確実に還付あり。</td></tr>
+    <tr><td><b>子の扶養は所得の高い方へ</b></td><td>16歳未満は扶養控除0円だが、住民税の非課税判定に影響。共働きで妻が育休中なら子は夫の税扶養に入れるのが原則有利。</td></tr>
+    <tr><td><b>2026年10月〜 国民年金の育児免除</b></td><td>国民年金第1号(自営業等)の親に、子が1歳になるまでの保険料免除制度が新設。父親も対象。該当する場合は届出を。<br><span class="url">https://www.nenkin.go.jp/tokusetsu/ikujimenjo.html</span></td></tr>
+  </table>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">6</div>
+</div>
+
+<!-- ============================================================ PAGE 7 : MONEY CHART -->
+<div class="page">
+  <h2>もらえるお金の全体像(モデルケース試算)</h2>
+  <p class="small">前提:夫婦とも会社員で月収(標準報酬月額)30万円/妻は産休+1年間育休/夫は出生後28日間育休/正常分娩・入院費用52万円。実際の金額は収入・分娩状況で変わります。</p>
+
+  <figure>
+  <svg width="182mm" height="118mm" viewBox="0 0 728 472" font-family="IPAPGothic" font-size="13">
+    <!-- grid -->
+    <g stroke="#e4e2dc" stroke-width="1">
+      <line x1="295" y1="10" x2="295" y2="420"/>
+      <line x1="415" y1="10" x2="415" y2="420"/>
+      <line x1="535" y1="10" x2="535" y2="420"/>
+      <line x1="655" y1="10" x2="655" y2="420"/>
+    </g>
+    <g fill="#8a8880" font-size="11">
+      <text x="295" y="438" text-anchor="middle">50万円</text>
+      <text x="415" y="438" text-anchor="middle">100万円</text>
+      <text x="535" y="438" text-anchor="middle">150万円</text>
+      <text x="655" y="438" text-anchor="middle">200万円</text>
+    </g>
+    <!-- bars: base x=175, scale 2.4px per 万円 -->
+    <g>
+      <text x="167" y="40" text-anchor="end" font-size="12.5">妻の育休給付金(1年)</text>
+      <rect x="175" y="24" width="434" height="26" rx="4" fill="#2a78d6"/>
+      <text x="617" y="42" fill="#0b0b0b" font-weight="bold">約181万円</text>
+      <text x="180" y="66" fill="#52514e" font-size="10.5">67%×6か月(約121万)+50%×4か月(約60万)・非課税</text>
+
+      <text x="167" y="102" text-anchor="end" font-size="12.5">妻の出産手当金(98日)</text>
+      <rect x="175" y="86" width="156" height="26" rx="4" fill="#2a78d6"/>
+      <text x="339" y="104" fill="#0b0b0b" font-weight="bold">約65万円</text>
+      <text x="180" y="128" fill="#52514e" font-size="10.5">日額6,667円(給与の2/3)×98日・非課税</text>
+
+      <text x="167" y="164" text-anchor="end" font-size="12.5">出産育児一時金</text>
+      <rect x="175" y="148" width="120" height="26" rx="4" fill="#2a78d6"/>
+      <text x="303" y="166" fill="#0b0b0b" font-weight="bold">50万円</text>
+      <text x="180" y="190" fill="#52514e" font-size="10.5">産院へ直接支払い。窓口では差額約2万円のみ負担</text>
+
+      <text x="167" y="226" text-anchor="end" font-size="12.5">夫の育休給付(28日)</text>
+      <rect x="175" y="210" width="53" height="26" rx="4" fill="#2a78d6"/>
+      <text x="236" y="228" fill="#0b0b0b" font-weight="bold">約22万円</text>
+      <text x="180" y="252" fill="#52514e" font-size="10.5">67%+上乗せ13%=80%。保険料免除・非課税で手取り実質10割</text>
+
+      <text x="167" y="288" text-anchor="end" font-size="12.5">児童手当(1年分)</text>
+      <rect x="175" y="272" width="43" height="26" rx="4" fill="#2a78d6"/>
+      <text x="226" y="290" fill="#0b0b0b" font-weight="bold">18万円</text>
+      <text x="180" y="314" fill="#52514e" font-size="10.5">月1.5万円(3歳未満)。18歳年度末までの総額は約234万円</text>
+
+      <text x="167" y="350" text-anchor="end" font-size="12.5">妊婦支援給付金①②</text>
+      <rect x="175" y="334" width="24" height="26" rx="4" fill="#2a78d6"/>
+      <text x="207" y="352" fill="#0b0b0b" font-weight="bold">10万円</text>
+      <text x="180" y="376" fill="#52514e" font-size="10.5">吹田市経由で妊娠時5万円+出産後5万円</text>
+
+      <text x="167" y="412" text-anchor="end" font-size="12.5">税還付(控除2種)</text>
+      <rect x="175" y="396" width="12" height="26" rx="4" fill="#2a78d6"/>
+      <text x="195" y="414" fill="#0b0b0b" font-weight="bold">約5万円</text>
+    </g>
+    <!-- total -->
+    <text x="175" y="466" font-size="14" font-weight="bold" fill="#1c5cab">合計:約351万円(+社会保険料免除の負担減が別途 月4〜9万円規模×休業期間)</text>
+  </svg>
+  <figcaption>単位:万円。青バーは受取額の概算。妻の育休給付金の内訳と夫側の上乗せはP.5参照。</figcaption>
+  </figure>
+
+  <h3>このモデルで「何もしなかった場合」に失うお金</h3>
+  <table>
+    <tr><th style="width:44%">申請漏れ・知らなかった場合</th><th>失う金額</th></tr>
+    <tr><td>児童手当の申請が1か月遅れた</td><td class="money">▲1.5万円(遡及不可)</td></tr>
+    <tr><td>夫が育休を取らなかった/14日未満だった</td><td class="money">▲約22万円(上乗せ給付を含む)</td></tr>
+    <tr><td>妊婦支援給付金を申請しなかった</td><td class="money">▲10万円</td></tr>
+    <tr><td>医療費控除・配偶者控除を申告しなかった</td><td class="money">▲約5〜12万円</td></tr>
+    <tr><td>(国保の場合)産前産後免除を届け出なかった</td><td class="money">▲約7万円</td></tr>
+    <tr><td>健保組合の付加給付・民間保険の請求漏れ</td><td class="money">▲数万〜数十万円</td></tr>
+  </table>
+
+  <div class="point"><b>資金繰りの山場は9〜12月:</b>出産手当金は10月以降、育休給付金の初回は12月頃の入金になりがちです。8〜11月は「支出だけが先行する期間」として、生活費3か月分の手元資金を確保しておくと安心です。</div>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">7</div>
+</div>
+
+<!-- ============================================================ PAGE 8 : LINKS -->
+<div class="page">
+  <h2>申請先・窓口・URL 完全リスト</h2>
+
+  <h3>吹田市の窓口</h3>
+  <table>
+    <tr><th style="width:30%">窓口</th><th>担当・連絡先</th></tr>
+    <tr><td>すこやか親子室(母子保健)</td><td>妊婦健診・妊婦支援給付金・産後ケア・新生児訪問など/〒564-0072 吹田市出口町19-2</td></tr>
+    <tr><td>市民課(市役所本庁)</td><td>出生届・住民票・マイナンバーカード</td></tr>
+    <tr><td>児童手当・こども医療担当(児童部)</td><td>児童手当の認定請求・こども医療証の交付</td></tr>
+    <tr><td>保育幼稚園室</td><td>保育所入園申込・保育コンシェルジュ相談</td></tr>
+    <tr><td>国民健康保険・年金担当</td><td>国保加入・産前産後の保険料免除の届出</td></tr>
+  </table>
+
+  <h3>制度別リンク集(このページだけブックマークすればOK)</h3>
+  <table>
+    <tr><th style="width:34%">制度</th><th>URL</th></tr>
+    <tr><td>妊婦のための支援給付(計10万円)【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1037662.html</td></tr>
+    <tr><td>妊娠・出産の助成・手当 総合案内【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018215/index.html</td></tr>
+    <tr><td>妊産婦サポートクーポン【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1022747.html</td></tr>
+    <tr><td>妊婦健康診査・歯科健診【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018206/1018207/1015651.html</td></tr>
+    <tr><td>府外での健診・1か月児健診の償還払い【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018215/1015477.html</td></tr>
+    <tr><td>子育ての手当・給付・助成 一覧(児童手当ほか)【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018219/1018222/</td></tr>
+    <tr><td>子ども医療費助成(18歳まで)【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018219/1018222/1005604.html</td></tr>
+    <tr><td>産後ケア事業【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018210/1018211/index.html</td></tr>
+    <tr><td>産後家事支援事業【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018205/1018210/1018212/index.html</td></tr>
+    <tr><td>出産育児一時金(国保の場合)【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kenko/1018391/1024390/1024432.html</td></tr>
+    <tr><td>保育所等の入園総合案内【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018247/index.html</td></tr>
+    <tr><td>保育所等の利用申込【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018247/1022101/</td></tr>
+    <tr><td>こども誰でも通園制度【吹田市】</td><td class="url">https://www.city.suita.osaka.jp/kosodate/1018230/1018245/1041895/index.html</td></tr>
+    <tr><td>こども誰でも通園 予約ポータル【国】</td><td class="url">https://www.daretsu.cfa.go.jp/</td></tr>
+    <tr><td>児童手当制度の案内【こども家庭庁】</td><td class="url">https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/</td></tr>
+    <tr><td>妊婦支援給付・伴走型支援の解説【こども家庭庁】</td><td class="url">https://www.cfa.go.jp/policies/shussan-kosodate</td></tr>
+    <tr><td>出産育児一時金・差額申請【協会けんぽ】</td><td class="url">https://www.kyoukaikenpo.or.jp/benefit/childbirth/002/index.html</td></tr>
+    <tr><td>出産手当金【協会けんぽ】</td><td class="url">https://www.kyoukaikenpo.or.jp/benefit/childbirth/001/index.html</td></tr>
+    <tr><td>育児休業給付(雇用保険)【ハローワーク】</td><td class="url">https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html</td></tr>
+    <tr><td>出生後休業支援給付金リーフレット【厚労省】</td><td class="url">https://www.mhlw.go.jp/content/11600000/001461102.pdf</td></tr>
+    <tr><td>国民年金の産前産後免除【日本年金機構】</td><td class="url">https://www.nenkin.go.jp/service/kokunen/menjo/20180810.html</td></tr>
+    <tr><td>国民年金の育児期間免除(2026年10月〜)【日本年金機構】</td><td class="url">https://www.nenkin.go.jp/tokusetsu/ikujimenjo.html</td></tr>
+    <tr><td>医療費控除【国税庁】</td><td class="url">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm</td></tr>
+    <tr><td>医療費控除の対象となる出産費用【国税庁】</td><td class="url">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1124.htm</td></tr>
+    <tr><td>配偶者特別控除【国税庁】</td><td class="url">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1195.htm</td></tr>
+    <tr><td>出産育児一時金の制度概要【厚労省】</td><td class="url">https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/shussan/index.html</td></tr>
+  </table>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">8</div>
+</div>
+
+<!-- ============================================================ PAGE 9 : NOTES -->
+<div class="page">
+  <h2>今後の制度変更と注意事項</h2>
+
+  <h3>これから変わる制度(先取り情報)</h3>
+  <table>
+    <tr><th style="width:34%">変更</th><th>内容と影響</th></tr>
+    <tr><td><b>出産費用の保険適用・自己負担無償化</b></td><td>健康保険法等の改正が2026年4月に衆議院で可決。ただし施行は「公布後2年以内」のため<b>早くて2027年度以降</b>の見込み。<b>今回の出産は現行制度(出産育児一時金50万円)が適用</b>されます。標準的な出産費用が無償化されても、個室代や特別サービスは自己負担のままの見通し。</td></tr>
+    <tr><td><b>国民年金の育児期間免除(2026年10月〜)</b></td><td>第1号被保険者(自営業・フリーランス)の親は、子が1歳になるまで保険料免除。父母とも対象。今回の出産にも適用され得るため、該当世帯は10月に届出を。</td></tr>
+    <tr><td><b>こども誰でも通園制度(2026年度〜本格実施)</b></td><td>月10時間・生後6か月から。今後の拡充が議論されているため、利用開始時に上限時間を再確認。</td></tr>
+    <tr><td><b>児童手当のさらなる拡充議論</b></td><td>経済対策として上乗せ給付が政治日程に上ることがあります。市の広報・報道を年1回チェック。</td></tr>
+  </table>
+
+  <h3>取りこぼし防止の3原則</h3>
+  <table>
+    <tr><th style="width:24%">原則</th><th>理由</th></tr>
+    <tr><td><b>① 申請主義</b></td><td>日本の給付は原則すべて「申請しないともらえない」。出生届を出しても児童手当は自動では始まりません。本書のチェックリストを物理的に潰すこと。</td></tr>
+    <tr><td><b>② 期限は「出生日」起点</b></td><td>予定日8/12より早まる・遅れることは普通にあります。すべての期限(14日・15日)は<b>実際の出生日</b>から数え直してください。</td></tr>
+    <tr><td><b>③ 領収書は捨てない</b></td><td>医療費控除は5年遡及可能。「もう間に合わない」は基本的にありません。迷ったら保管。</td></tr>
+  </table>
+
+  <h3>本資料の前提と免責</h3>
+  <p class="small">・本資料は2026年7月2日時点の公開情報(吹田市・こども家庭庁・厚生労働省・協会けんぽ・日本年金機構・国税庁等)に基づいて作成しています。<br>
+  ・金額のモデル試算は概算であり、実際の支給額は標準報酬月額・雇用保険の加入状況・分娩の内容により変動します。<br>
+  ・健保組合独自の付加給付、勤務先の福利厚生は各自でご確認ください。<br>
+  ・制度の適用可否の最終判断は、各ページ記載の公式窓口・URLでご確認ください。特に吹田市の独自事業(クーポン・産後ケア等)は年度により内容が変わることがあります。<br>
+  ・税務の個別判断が必要な場合は税務署(吹田税務署)または税理士にご相談ください。</p>
+
+  <div class="tip"><b>最後に:</b>この計画で最も費用対効果が高いのは「①児童手当を15日以内に申請する」「②夫が14日以上育休を取る」「③夫の年末調整で配偶者控除を申告する」の3つです。この3つだけは必ず実行してください。安産をお祈りしています!</div>
+
+  <div class="foot">出産・子育ておかね完全アクションプラン(吹田市版) 2026.7</div>
+  <div class="pgno">9</div>
+</div>
+
+</body>
+</html>
