@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ルーベン美食ガイド(スマホ版)</title>
+<style>
+  :root{
+    --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --ink3:#8a8880;
+    --blue:#2a78d6; --blue-d:#1c5cab; --blue-ll:#eaf3fd;
+    --aqua:#1baf7a; --aqua-d:#0d6647; --aqua-ll:#e9f7f1;
+    --yellow:#eda100; --yellow-d:#8a5d00; --yellow-ll:#fdf6e7;
+    --violet:#4a3aa7; --violet-ll:#efedfa;
+    --red:#e34948; --line:#e4e2dc;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  @page{size:120mm 240mm; margin:7mm 7mm 8mm;}
+  html,body{background:var(--surface); color:var(--ink);
+    font-family:"IPAPGothic","IPAGothic",sans-serif; font-size:10.5pt; line-height:1.6;}
+
+  h1{font-size:17pt; line-height:1.4;}
+  h2{font-size:13.5pt; margin:6mm 0 3mm; padding:1.6mm 3mm; border-radius:2mm; color:#fff;
+     background:var(--blue); break-after:avoid;}
+  h2.c-cheese{background:var(--aqua);}
+  h2.c-sweet{background:var(--yellow);}
+  h2.c-bread{background:var(--violet);}
+  h2.c-beer{background:#0d366b;}
+  p{margin-bottom:2mm;}
+  .small{font-size:8.5pt; color:var(--ink2);}
+  .tiny{font-size:7.5pt; color:var(--ink3);}
+
+  .cover{background:linear-gradient(150deg,#0d366b,#2a78d6); color:#fff;
+    border-radius:4mm; padding:7mm 6mm; margin-bottom:4mm;}
+  .cover .sub{font-size:9.5pt; opacity:.92; margin-top:2.5mm; line-height:1.6;}
+  .cover .meta{margin-top:3.5mm; font-size:8.5pt; opacity:.85;}
+
+  .card{border:1px solid var(--line); border-radius:3mm; background:#fff;
+    padding:3.5mm 4mm 3mm; margin-bottom:3mm; break-inside:avoid;}
+  .card .nm{font-size:12pt; font-weight:bold; line-height:1.4;}
+  .card .yomi{font-size:8pt; color:var(--ink3); margin-left:1mm;}
+  .chips{margin:1mm 0 1.5mm;}
+  .chip{display:inline-block; font-size:7.5pt; border-radius:99px; padding:.3mm 2.6mm; margin-right:1.5mm; color:#fff; background:var(--ink3);}
+  .chip.blog{background:var(--blue);}
+  .chip.pop{background:var(--red);}
+  .chip.hist{background:var(--violet);}
+  .chip.street{background:var(--aqua);}
+  .card .desc{font-size:9.5pt; margin:1mm 0 1.5mm;}
+  .card .pt{font-size:9pt; background:var(--yellow-ll); border-radius:2mm; padding:1.5mm 2.5mm; margin-bottom:1.8mm;}
+  .card .pt b{color:var(--yellow-d);}
+  .card .addr{font-size:8pt; color:var(--ink2); margin-bottom:1.8mm;}
+  a.map{display:block; text-align:center; background:var(--blue); color:#fff;
+    text-decoration:none; font-size:10pt; padding:2.2mm 0; border-radius:2mm; font-weight:bold;}
+  a.map::before{content:"📍 ";}
+
+  .legend{border:1px solid var(--line); border-radius:3mm; background:#fff; padding:3mm 4mm; margin-bottom:3mm; font-size:8.5pt; color:var(--ink2);}
+  .legend .chip{vertical-align:1px;}
+
+  .route{border:1px solid var(--line); border-radius:3mm; background:#fff; padding:3.5mm 4mm; margin-bottom:3mm; break-inside:avoid;}
+  .route ol{margin:1mm 0 1mm 6mm; font-size:9.5pt;}
+  .route li{margin-bottom:1.2mm;}
+
+  .note{border-left:3.5px solid var(--red); background:#fdeeee; padding:2.2mm 3mm;
+    border-radius:0 2mm 2mm 0; margin:2mm 0 3mm; font-size:8.8pt; break-inside:avoid;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div style="font-size:8.5pt; opacity:.85;">BELGIUM / LEUVEN 🇧🇪</div>
+  <h1>ルーベン美食ガイド</h1>
+  <div class="sub">ベルギー料理・チーズ・加工肉・惣菜・デザートの厳選18スポット。全店にGoogleマップのリンク付き — タップすれば地図が開きます。</div>
+  <div class="meta">2026年7月調査 / 個人ブログ・地元メディア・口コミ突出度・老舗度で選考</div>
+</div>
+
+<div class="legend">
+  <b>タグの意味:</b><br>
+  <span class="chip blog">ブログ推薦</span>個人ブログ・公式ブログで名店として言及<br>
+  <span class="chip pop">口コミ突出</span>同カテゴリで口コミ・行列が突出<br>
+  <span class="chip hist">老舗・歴史</span>地元に根ざした歴史ある店<br>
+  <span class="chip street">食の専門街</span>Mechelsestraat(食材街)/Muntstraat(食堂街)立地
+</div>
+
+<div class="note"><b>回り方のコツ:</b>ベルギーの個人店は月曜休・夏季休業が多め。訪問前にマップの営業時間を確認。支払いはカード(Bancontact/Visa)がほぼ全店OK。</div>
+
+<h2>ベルギー料理・レストラン</h2>
+
+<div class="card">
+  <div class="nm">De Nachtuil<span class="yomi">デ・ナフトゥイル</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">「ルーベンで数少ない本物のベルギー料理店」。ストーフフレース(牛のビール煮)、ワーテルゾーイ、ムール&フリッツ。木のベンチの素朴な店内。</div>
+  <div class="pt"><b>ポイント:</b>深夜2時まで営業。夜遅くの「締めの郷土料理」に最適。</div>
+  <div class="addr">Naamsestraat付近(旧市庁舎・Oude Markt近く)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=De%20Nachtuil%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Domus<span class="yomi">ドムス</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">1985年創業、ベネルクス初の自家醸造ブラッスリー。向かいの醸造所から銅パイプで直接タップにビールが届く。フランデレン家庭料理が大盛り。</div>
+  <div class="pt"><b>ポイント:</b>中世の地下セラーあり。ビール+郷土料理+歴史を1軒で。</div>
+  <div class="addr">Tiensestraat 8, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Domus%20Leuven%20Tiensestraat">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">De Werf<span class="yomi">デ・ウェルフ</span></div>
+  <div class="chips"><span class="chip pop">口コミ突出</span><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">学生街の超定番「カルト的名店」。パスタ・チリコンカン・サラダが他店より圧倒的に安く、常に満席。デザートのチョコレートムースも名物。</div>
+  <div class="pt"><b>ポイント:</b>安く済ませたい昼・テラス日和に。混雑自体が品質保証。</div>
+  <div class="addr">Hogeschoolplein 5, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=De%20Werf%20Hogeschoolplein%205%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Muntstraat<span class="yomi">ムント通り(レストラン街)</span></div>
+  <div class="chips"><span class="chip street">食の専門街</span><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">30軒以上が並ぶルーベンのレストラン街。郷土料理から各国料理まで。日本人旅行ブログでも定番言及。</div>
+  <div class="pt"><b>ポイント:</b>迷ったらこの通りを歩き、混んでいる店に入るのが地元流。</div>
+  <div class="addr">Muntstraat, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Muntstraat%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2>フリッツ・ソーセージ(軽食)</h2>
+
+<div class="card">
+  <div class="nm">Wurst<span class="yomi">ヴルスト</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">Visit Leuven公式ブログ「地元民の食べ場所」特集掲載のソーセージ専門店。看板はチリドッグ(ソーセージ+チリ+溶けチーズ+ワカモレ)。</div>
+  <div class="pt"><b>ポイント:</b>加工肉好きなら外食側の本命。クラフトビールも揃う。</div>
+  <div class="addr">Leuven中心部</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Wurst%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Frituur Boem Patat<span class="yomi">ブーム・パタット</span></div>
+  <div class="chips"><span class="chip pop">口コミ突出</span></div>
+  <div class="desc">中心部のフリチュール(フリッツ専門店)。二度揚げの本場フリッツにストーフフレースソースをかけるのがベルギー流。</div>
+  <div class="pt"><b>ポイント:</b>「フリッツ+煮込みソース」はルーベンの昼の定番。ソースは Stoofvleessaus を指名。</div>
+  <div class="addr">Leuven中心部</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Frituur%20Boem%20Patat%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2 class="c-cheese">チーズ・加工肉・惣菜</h2>
+
+<div class="card">
+  <div class="nm">Elsen Kaasambacht<span class="yomi">エルセン(チーズ熟成士)</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span><span class="chip street">食の専門街</span><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">1983年創業の家族経営アフィヌール(チーズ熟成職人)。街の最低地点にある店の地下セラーが天然熟成庫。政府公認の職人ラベル保持、現在は息子2人が2代目。</div>
+  <div class="pt"><b>ポイント:</b>今回調査の最有力。国内外の上質シャルキュトリ(加工肉)も併売、チーズ+加工肉を一度に調達可。チーズプレート注文も可能。</div>
+  <div class="addr">Mechelsestraat 36, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Elsen%20Kaasambacht%20Mechelsestraat%2036%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">De Smidse<span class="yomi">デ・スミッツェ(屋内フードマーケット)</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span><span class="chip pop">口コミ突出</span></div>
+  <div class="desc">Stella Artois醸造所の旧鍛冶場を改装した屋内市場(2017年開業、バルセロナのボケリア市場がモデル)。職人系食品店が集結。</div>
+  <div class="pt"><b>ポイント:</b>惣菜・加工肉・パン・パスタ・コーヒーを1棟で買い回り。下の3店が入居。</div>
+  <div class="addr">Sluisstraat 10, 3000 Leuven(運河地区Vaartkom)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=De%20Smidse%20Sluisstraat%2010%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">De Kapblok<span class="yomi">デ・カップブロック(De Smidse内)</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">「culinary butcher」を名乗る精肉+デリ。シャルキュトリと惣菜の専門店で、加工肉・お惣菜ニーズの本命。</div>
+  <div class="pt"><b>ポイント:</b>量り売りの惣菜をホテルやピクニックのおかずに。</div>
+  <div class="addr">De Smidse内(Sluisstraat 10)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=De%20Kapblok%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">L'Atelier de Séraphine<span class="yomi">アトリエ・ド・セラフィーヌ(De Smidse内)</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">De Smidse内のベーカリー&パティスリー。朝食パンと焼き菓子をここで、惣菜をDe Kapblokで、が効率的。</div>
+  <div class="addr">De Smidse内(Sluisstraat 10)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=L%27Atelier%20de%20S%C3%A9raphine%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Rossi Pasta Atelier<span class="yomi">ロッシ(De Smidse内)</span></div>
+  <div class="chips"><span class="chip pop">口コミ突出</span></div>
+  <div class="desc">De Smidse内の生パスタアトリエ。持ち帰りの生パスタ・ソースは「非アジアの惣菜」枠として優秀。イートインも。</div>
+  <div class="addr">De Smidse内(Sluisstraat 10)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Rossi%20Pasta%20Atelier%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">金曜の週市<span class="yomi">Vrijdagmarkt(青空市場)</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">中心部(Ladeuzeplein周辺)で金曜午前に開かれる伝統的な週市。チーズ・肉・ロティサリーチキンの屋台。曜日・場所は変更されることがあるので要確認。</div>
+  <div class="addr">Mgr. Ladeuzeplein, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Ladeuzeplein%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2 class="c-sweet">デザート・チョコレート</h2>
+
+<div class="card">
+  <div class="nm">ZUUT<span class="yomi">ズート</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span><span class="chip street">食の専門街</span></div>
+  <div class="desc">Mechelsestraatのパティスリー&ショコラトリー。クラシックケーキ、季節菓子、プラリネ、板チョコまで職人仕事。日本人ブログでも言及。</div>
+  <div class="pt"><b>ポイント:</b>エルセン(チーズ)と同じ通り。ハシゴ推奨。</div>
+  <div class="addr">Mechelsestraat, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Patisserie%20ZUUT%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Bittersweet<span class="yomi">ビタースウィート</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">「ルーベンで最も創作的なプラリネ」と評されるショコラトリー。</div>
+  <div class="pt"><b>ポイント:</b>金・土限定でトッピング付きソフトクリームあり。</div>
+  <div class="addr">Leuven中心部</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Bittersweet%20chocolade%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">'t Galetje<span class="yomi">ト・ハレチェ</span></div>
+  <div class="chips"><span class="chip pop">口コミ突出</span></div>
+  <div class="desc">ジェラートの行列店。市中心近くに2店舗。「常に人だかり」の記述が複数ソースで一致。自家製ワッフルコーンの評価が特に高い。</div>
+  <div class="addr">Leuven中心部(2店舗)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=%27t%20Galetje%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Tartufo<span class="yomi">タルトゥーフォ</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">駅から中心部へ向かう途中の小さなチョコレート店。ベルギーでもここ1店舗のみ。日本人旅行ブログ発掘の可愛い名店。</div>
+  <div class="addr">駅〜中心部の途中(Bondgenotenlaan方面)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tartufo%20chocolatier%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2 class="c-bread">パン(朝食・買い出し)</h2>
+
+<div class="card">
+  <div class="nm">Bakkerij Het Brood<span class="yomi">ヘット・ブロート</span></div>
+  <div class="chips"><span class="chip blog">ブログ推薦</span></div>
+  <div class="desc">中心部の職人系ベーカリー。クロワッサンとケーキ類の評価が高い。</div>
+  <div class="addr">Leuven中心部</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Bakkerij%20Het%20Brood%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">De 4de Generatie<span class="yomi">デ・フィールデ・ヘネラーツィ(第4世代)</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">店名どおり4代続く家族経営ベーカリー。エクレアの中のカスタードまで自家製という「純粋で正直な製品」が信条。</div>
+  <div class="addr">Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Bakkerij%20De%204de%20Generatie%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2 class="c-beer">ビール(おまけ)</h2>
+
+<div class="card">
+  <div class="nm">Stella Artois 醸造所見学<span class="yomi">ステラ・アルトワ</span></div>
+  <div class="chips"><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">ルーベンはStella Artois発祥の地。駅北側の醸造所は見学ツアーあり(要予約)。</div>
+  <div class="addr">Aarschotsesteenweg 20, 3000 Leuven(見学受付)</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Stella%20Artois%20Brewery%20tour%20Leuven">Googleマップで開く</a>
+</div>
+
+<div class="card">
+  <div class="nm">Oude Markt<span class="yomi">アウデ・マルクト(旧市場広場)</span></div>
+  <div class="chips"><span class="chip pop">口コミ突出</span><span class="chip hist">老舗・歴史</span></div>
+  <div class="desc">広場全体がカフェ・バーで埋まる「ヨーロッパ最長のバーカウンター」。夜はここで一杯が定番。</div>
+  <div class="addr">Oude Markt, 3000 Leuven</div>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Oude%20Markt%20Leuven">Googleマップで開く</a>
+</div>
+
+<h2>半日モデルルート</h2>
+
+<div class="route">
+  <ol>
+    <li><b>ルーベン駅</b>から中心部へ徒歩。途中<b>Tartufo</b>でチョコを1箱</li>
+    <li><b>Mechelsestraat</b>へ — <b>Elsen</b>でチーズ&シャルキュトリ → <b>ZUUT</b>でケーキ</li>
+    <li>北上して運河地区<b>Vaartkom</b>の<b>De Smidse</b> — <b>De Kapblok</b>で惣菜、<b>Séraphine</b>でパン</li>
+    <li>(体力があれば)<b>Stella Artois</b>醸造所見学</li>
+    <li>夜は<b>De Nachtuil</b>か<b>Domus</b>でストーフフレース</li>
+    <li>締めは<b>'t Galetje</b>のジェラートか<b>Oude Markt</b>で一杯</li>
+  </ol>
+  <p class="small">中心部はすべて徒歩圏(駅→Oude Markt 約15分)。買った食材は保冷バッグがあると安心。</p>
+</div>
+
+<div class="note"><b>注意:</b>本ガイドは2026年7月時点のブログ・レビューサイト・公式サイト情報に基づきます。Googleマップのリンクは店名検索式のため、万一違う店が表示されたら住所で照合してください。営業時間・移転は各マップページで最終確認を。</div>
+
+<p class="tiny">選考基準: ①個人ブログ・Visit Leuven公式ブログでの名店言及 ②複数レビューサイトでの口コミ・行列の突出 ③創業年・代替わりのある老舗 ④食の専門街(Mechelsestraat/Muntstraat)立地 ⑤職人認証・自家製比率。</p>
+
+</body>
+</html>
