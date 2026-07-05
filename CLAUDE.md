@@ -26,6 +26,25 @@
   **必ず事前に「その方針で良いか」を確認**してから実行すること。
   (例: 実写が取れないのでイラストで代用する——のような自己判断の拡大解釈は禁止。)
 
+## Google Maps 連携 — 実写取得の確立済み手順(重要)
+
+- この環境の外部通信は許可リスト方式で、通常の画像ホスト(wikimedia等)は403になるが、
+  **maps.googleapis.com は通る**。実写が必要なときは Google Maps Platform を使うこと。
+- ユーザーは **Street View Static API を有効化した APIキー**を保有している
+  (アプリケーション制限: HTTPリファラー `claude.ai`)。
+- **キー自体は秘密情報なのでこのリポジトリには保存しない。**
+  セッション開始時に「Maps APIキーを貼ってください」とユーザーに依頼して受け取ること。
+  受け取ったキーはコマンド内でのみ使い、コミット・成果物には絶対に残さない。
+- 呼び出し時は必ずヘッダー `Referer: https://claude.ai/` を付ける(リファラー制限対策)。
+- 取得手順:
+  1. `https://maps.googleapis.com/maps/api/streetview/metadata?location=<住所or座標>&source=outdoor&key=<KEY>` で status と pano を確認
+  2. `https://maps.googleapis.com/maps/api/streetview?size=640x400&location=<同>&fov=80..110&source=outdoor&key=<KEY>` で画像取得
+  3. 被写体に向かない場合は metadata のパノラマ座標から方位角を計算し `pano=<ID>&heading=<角度>` を指定
+  4. 広場・工事中などで失敗する地点があるため、**取得した写真は必ず1枚ずつ目視確認**する
+- Street View で取れるのは店構えの実写のみ。料理・店内の実写が必要な場合は
+  **Places API (New) の有効化をユーザーに依頼**する。
+- 写真には © Google の透かしが入る。成果物には出典「Google Street View」を明記する。
+
 ## このリポジトリについて
 
 - 成果物置き場として使われている(コード開発用ではない)。
