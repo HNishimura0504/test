@@ -58,28 +58,30 @@
 
 - **出力前に、ユーザーの指定条件を1つずつ列挙し、成果物が各条件を満たすかを
   批判的に自己評価**すること。満たさない場合は納品せず、その旨を報告して指示を仰ぐ。
-- ルーベン美食ガイドの写真の指定条件は
+- 美食ガイドの写真の指定条件は
   **「その店の特徴が一目でわかる料理やショーケースの写真」**。店構え外観では不十分。
+  (ガイド本体は ai-memory へ移設済み。下記「美食ガイドは ai-memory へ移設済み」を参照)
 
-## ルーベンガイド 料理写真の未完了タスク(次セッションへの引き継ぎ)
+## 美食ガイドは ai-memory へ移設済み(2026-08-06)
 
-- Places API (New) は**ユーザーのキーで有効・動作確認済み**。全19店の place_id と
-  写真リソース名は `leuven_places.json` に保存済み。
-- **ブロッカー:** 写真の実データは lh3.googleusercontent.com から配信されるが、
-  現環境のネットワーク許可リストに含まれず接続不可(検証済み)。
-- **解決手順:** ネットワークアクセス「すべて許可」のセッションを作成 →
-  `MAPS_KEY=<キー> bash tools/fetch_food_photos.sh` → 候補から料理/ショーケースの
-  1枚を目視選定して `img/<店>.jpg` を差し替え → `leuven.html` の出典表記を
-  「Google Maps投稿写真」に更新 → PDF再生成(チェック: 写真=料理/ショーケースか?)。
-- **ブログ・観光サイト写真での補完(ユーザー了承済みの方針):**
-  Places写真に良い料理写真がない店のみ、ブログ等から補完してよい。ただし
-  **このリポジトリは公開のため、ブログ由来の写真はコミット禁止**
-  (著作権上の再配布リスク)。ブログ写真を使ったPDFはチャットでの直接送付のみとし、
-  出典URLを写真ごとに明記する。リポジトリに置けるのはGoogle Maps系写真のみ。
+- **欧州8都市(ブリュッセル・ヘント・ルーベン・リエージュ・アムステルダム・ケルン・
+  フランクフルト・パリ)の美食ガイドは、このリポジトリから `HNishimura0504/ai-memory` へ集約した。**
+  新しい場所: `topics/restaurant-guides/output/europe/<国ローマ字>/`
+  (日本のガイドは `topics/restaurant-guides/output/japan/<県ローマ字>/`。総合インデックスは
+  `topics/restaurant-guides/output/README.md`)。
+- 写真取得ツール `tools/fetch_food_photos.sh` も
+  `ai-memory` の `topics/restaurant-guides/assets/fetch_food_photos.sh` へ移設した
+  (places.json と採用先 img ディレクトリを引数で受ける形に変更済み)。
+- **ルーベンの料理写真の未完了タスク**は
+  `ai-memory` の `topics/restaurant-guides/log/handoff_leuven_food_photos.md` が正本。
+  以後この件は ai-memory 側で作業すること。
+- 美食ガイドの作成手法(写真ルール・パイプライン・店数基準)の正本は
+  `ai-memory` の `topics/restaurant-guides/notes/playbook.md`。
 
 ## このリポジトリについて
 
 - 成果物置き場として使われている(コード開発用ではない)。
-- これまでの成果物: 出産・子育て支援の完全アクションプランPDF(吹田市版)と
+- 現在の成果物: 出産・子育て支援の完全アクションプランPDF(吹田市版)と
   その生成元 `plan.html`。PDF再生成方法は README.md 参照。
+  (美食ガイド一式は 2026-08-06 に ai-memory へ移設した)
 - ユーザーへの返答は日本語で行う。
