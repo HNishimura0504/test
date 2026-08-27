@@ -114,6 +114,9 @@
 
 - **作ったら、その場で ready 化してマージまで完了させる。例外を作らない。**
 - **作成後の定期チェック(`send_later` の自己チェックイン)と `subscribe_pr_activity` による購読はしない。**
+- **【2026-08-27 制定・B-134】プルリクエストを作る直前に、毎回(同一セッション内の2件目以降でも)
+  `bash /home/user/ai-memory/topics/memory-system/assets/pre_pr_check.sh` を実行し、WARNING を解消してから作成する**
+  (ai-memory はクローン済みの前提。「このセッションでは1回通した」は通したことにならない)。
 
 > **なぜこの一行が要るか**: ハーネス(Claude Code Remote / web 実行)の system prompt の
 > 「PR Activity Events」節が、**正反対のことを明文で指示してくる**——「`send_later` が使えるなら、
